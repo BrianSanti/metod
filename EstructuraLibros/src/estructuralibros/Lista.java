@@ -18,14 +18,15 @@ public class Lista {
         
         public String Listar()
 	{
+                
 		String Dato=" ";
 		Nodo aux=cabeza;
 		while (aux!=null)
 		{
                         
-			Dato+="\n\t|" + aux.libro.titulo+ "|";
-                        Dato+="\n\t|" + aux.libro.autor+ "|";
-                        Dato+="\n\t|" + aux.libro.isbn+ "|";
+			Dato+="\n\t|Libro: " + aux.libro.titulo+ "|";
+                        Dato+="\n\t|Autor: " + aux.libro.autor+ "|";
+                        Dato+="\n\t|Codigo: " + aux.libro.isbn+ "|";
 			aux=aux.siguiente;
 		}
 		return(Dato);
@@ -84,6 +85,7 @@ public class Lista {
 		}
 	}
 	public int contar() {
+          
 		return longitud;
 	}
         public boolean estaVacia() {
@@ -93,6 +95,7 @@ public class Lista {
         public void borrarPrimero()
 	{
 		cabeza=cabeza.siguiente;
+                longitud= longitud-1;
 	}
         
         public void eliminaPrincipio() {
@@ -106,7 +109,7 @@ public class Lista {
             if (cabeza!= null) {
                 if (cabeza.siguiente==null) {
                     cabeza=null;  
-                    longitud--;
+                    longitud= longitud-1;
                 } else {
                     Nodo puntero=cabeza;
                     while (puntero.siguiente.siguiente!=null) {                    
