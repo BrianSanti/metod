@@ -3,35 +3,42 @@ package estructuralibros;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class START {
 
     public static void main(String[] args) {
-         ArrayList<Libro> Lista = new ArrayList<>();
-         Libro libro= null;
-         Lista lista2 = new Lista();
         
-        int pp;
-      
- 
-
+        Libro libro;
+        Lista lista2 = new Lista();
         Scanner sc = new Scanner(System.in);
-       
+        String titulo,autor,isbn; 
+        int pp;
+        int sw = 0;
+        
         System.out.print("Ingrese numero de libros a ingresar:   ");
         int num = sc.nextInt();
-        Lista.add(libro);
         
         for (int i = 0; i < num; i++) {
-          System.out.print("Ingrese titulo " + (i + 1) + ":   ");
-          String titulo = sc.next();
-            lista2.insertarPrincipio(libro);
-           
+          
+       
+             System.out.println("INGRESE TITULO: ");
+             titulo = sc.next();
+             System.out.println("INGRESE AUTOR: ");
+             autor = sc.next();
+             System.out.println("INGRESE CODIGO: ");
+             isbn = sc.next();
+        
+        libro = new Libro(titulo,autor,isbn);
+        lista2.insertarPrincipio(libro);
         }
         
-        do{
+        do{  
+           
         System.out.print(" \n\t 1) Eliminar \n\t 2) Mostrar");
         System.out.print("\n\t Ingrese numero de opcion: ");
-        int sw = sc.nextInt();
+        sw = sc.nextInt();
+
 
         switch (sw) {
 
@@ -42,7 +49,7 @@ public class START {
                 if(eli == 1){
                     
                 //Eliminar el principio
-                lista2.eliminaPrincipio();
+                lista2.borrarPrimero();
                 
                 }
                 if(eli ==2){
@@ -61,11 +68,12 @@ public class START {
                 break;
 
             case 2:
+                
+                System.out.print("LISTADO DE LIBROS");
+                System.out.println(lista2.Listar());
+                
                
-//                for(int i = 0;  i<Lista.size(); i++){
-//                
-//               System.out.print(" Titulo "+getTitulo()+" Autor "+getAutor()+"Genero "+getisbn());
-//                }
+
                 break;
 
           

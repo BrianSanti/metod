@@ -15,6 +15,22 @@ public class Lista {
 			this.libro=libro;
 		}
 	}
+        
+        public String Listar()
+	{
+		String Dato=" ";
+		Nodo aux=cabeza;
+		while (aux!=null)
+		{
+                        
+			Dato+="\n\t|" + aux.libro.titulo+ "|";
+                        Dato+="\n\t|" + aux.libro.autor+ "|";
+                        Dato+="\n\t|" + aux.libro.isbn+ "|";
+			aux=aux.siguiente;
+		}
+		return(Dato);
+	}
+       
 	public void insertarPrincipio(Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		nodo.siguiente=cabeza;
@@ -73,6 +89,12 @@ public class Lista {
         public boolean estaVacia() {
             return cabeza==null;
         }
+        
+        public void borrarPrimero()
+	{
+		cabeza=cabeza.siguiente;
+	}
+        
         public void eliminaPrincipio() {
             if (cabeza!=null){
                 Nodo primer = cabeza;

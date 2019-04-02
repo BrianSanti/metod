@@ -2,9 +2,9 @@
 package estructuralibros;
 
 public class Libro {
-	private  String titulo;
-	private  String autor;
-	private  String isbn;
+	public String titulo;
+	public String autor;
+	public  String isbn;
         
         
         
@@ -23,6 +23,7 @@ public class Libro {
 	public String getAutor(String autor) {
 		return autor;	
 	}
+        
 	public void setAutor() {
 		this.autor=autor;
             
